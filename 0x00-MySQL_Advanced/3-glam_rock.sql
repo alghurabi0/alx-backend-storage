@@ -1,7 +1,7 @@
 -- "glam rock" bands
 SELECT
     band_name,
-    IFNULL(split - formed, YEAR(2022) - formed) AS lifespan
+    IFNULL(split, 2022) - INFULL(formed, 0) AS lifespan
 FROM
     metal_bands
 WHERE
