@@ -1,9 +1,6 @@
--- Createing the table if it doesn't exist
-IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'users')
-BEGIN
-    CREATE TABLE users (
-        id INT IDENTITY(1,1) PRIMARY KEY,
-        email NVARCHAR(255) NOT NULL UNIQUE,
-        name NVARCHAR(255)
-    );
-END;
+-- Check if the table exists
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    name VARCHAR(255)
+);
