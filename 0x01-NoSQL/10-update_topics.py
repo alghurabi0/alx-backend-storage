@@ -5,5 +5,5 @@
 def update_topics(mongo_collection, name, topics):
     """ change value of a doc of docs """
     q = {"name": name}
-    n = {$set: {"topics": topics}}
+    n = {"$set": {"topics": topics}}
     mongo_collection.update_many(q, n)
