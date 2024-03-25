@@ -1,0 +1,2 @@
+// regex find mongo
+db.school.find({name: /^Holberton/ })
