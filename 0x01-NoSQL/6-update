@@ -1,0 +1,9 @@
+// updateing all documents with matching name
+db.school.update(
+  { name: "Holberton School },
+    {$set: {
+      address: "972 Mission street"
+      }
+    },
+    {multi: true}
+)
