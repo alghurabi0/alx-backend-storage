@@ -1,17 +1,18 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ creating a Cache class for practicing redis"""
 import redis
 import uuid
+from typing import Union
 
 
 class Cache:
+    """Cache class using redis"""
     def __init__(self):
         """Cache instance initialization"""
         self._redis = redis.Redis()
-        # flushdb to flush the instance
-        self._redis.flushdb
+        self._redis.flushdb()
 
-    def store(self, data: any) -> str:
+    def store(self, data: Union[str, bytes, int, float]) -> str:
         """Generates a random key using uuid,
         sotres the input data in Redis using the
         random key and return the key (string)"""
